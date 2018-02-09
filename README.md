@@ -198,7 +198,7 @@ Esse serviço tem a finalidade de desligar o computador indicado pelo endereço 
 ---
 
 ```
-/desligar?host=192.168.0.1
+/api/desligar.php?host=192.168.0.1
 ```
 
 Em caso de sucesso
