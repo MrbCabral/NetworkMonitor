@@ -1,0 +1,17 @@
+[
+    {
+        "login": "edson",
+        "matricula": "20161380003",
+        "senha": "edson"
+    },
+    {
+        "login": "miguel",
+        "matricula": "20161380020",
+        "senha": "miguel"
+    },
+    {
+        "login": "eric",
+        "matricula": "20161380025",
+        "senha": "eric"
+    }
+]

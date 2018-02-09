@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/netmonitor.ico">
+
+    <title>Login no Network Monitor</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link href="../css/signin.css" rel="stylesheet">
+    <style>
+      body {
+        background: linear-gradient(to bottom right, #252830, whitesmoke, #252830);
+      }
+    </style>
+  </head>
+
+  <body class="text-center">
+    <div class="container">
+      <div class="row">
+        <form class="form-signin" method="POST" action="./login.php">
+          <img class="mb-4" src="../img/netmonitor.png" alt="" width="72" height="72">
+          <h1 class="h2 mb-3 font-weight-normal">Login</h1>
+          <label for="inputUser" class="sr-only">Usuario</label>
+          <input type="text" id="inputUser" name="usuario" class="form-control" placeholder="usuario ou matricula" required="" autofocus="">
+          <label for="inputPassword" class="sr-only">Senha</label>
+          <input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Password" required="">
+          <div class="checkbox mb-3">
+            <label> <input type="checkbox" value="lembrar" name="lembrar"> Lembre-se de mim</label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" value="entrar" id="entrar" name="entrar">Entrar</button>
+        </form>
+      </div>
+      <div class="row">
+        <p class="mt-5 mb-3 text-white fixed-bottom">Desenvolvido em 2017-2018</p>
+      </div>
+    </div>
+  </body>
+</html>

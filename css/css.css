@@ -1,0 +1,106 @@
+
+col {
+    border: 5px;
+    border-radius: 20px;
+
+}
+
+.label-success {
+    background-color: #7ace4c;
+}
+.label-info {
+    background-color: #009dff;
+}
+.label-danger {
+    background-color: #ff002f;
+}
+.label-warning {
+    background-color: #fb4;
+}
+.text-danger {
+    color: #0026ff;
+}
+.text-info {
+    color: #009cfe;
+}
+.text-success {
+    color: #7ace4c;
+}
+.label-rouded, .label-rounded {
+    border-radius: 60px;
+    padding: 4px 12px 3px;
+    font-weight: 500;
+}
+.label {
+    letter-spacing: .05em;
+}
+
+.label {
+    display: inline;
+    font-size: 75%;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+body {
+font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: #fff;
+background-color: #252830;
+
+}
+.bg-primary{
+    color: #fff;
+}
+.card{
+    margin: 8px;
+}
+.pcs{
+    text-align: center;
+    align-items: center;
+    color: #252830;
+}
+.nav{
+    width: 20%;
+    height: 100%;
+}
+.tabs{
+    margin-top: 60px;
+}
+.hr{
+    background-color: #fff;
+    border: #fff;
+}
+.menuLateral{
+    color: #fff;
+    border-radius: 15px;
+    font-weight: 600;
+}
+#titulo{
+    font-weight: 600;
+    color: #fff;
+}
+#tituloP{
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+.text_G{
+    font-weight: 400;
+    size: 17px;
+    text-justify: auto;
+    text-align: justify;
+}
+.seta{
+    background-color: #0069d9;
+    border-radius: 10px;
+}
+
+.titleAterar{
+    margin-top :10%;
+    font-weight: 400;
+    font-size: 18;
+    background-color: #0069d9;
+    border-radius: 10px;
+    padding: 5px;
+}

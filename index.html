@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Network Monitor</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS/ECS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+
+    <!-- Graficos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gauge.js/1.3.5/gauge.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+
+    <!-- Local JS e CSS -->
+    <link rel="stylesheet" href="/css/css.css">
+    <script src="/js/tabelaDisp.js"></script>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-primary" id="tituloP">
+            <a id="titulo" href="/index.html">NETWORK MONITOR</a>
+        </nav>
+        <div class="row">
+            <div class="col-2">
+                <div class="menuLateral">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a  class="nav-link" href="/index.html"><button type="button" class="btn btn-primary">Monitoramento</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pcs.html">Dispositivos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/alerta.html">Alertas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/captura.html">Capturas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/shutdown.html">Shutdown</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin.html">Administrador</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-10">
+                <hr>
+                <div class="row">
+                    <div class="col-4">
+                        <!-- grafico de sistemas operacionais -->
+                    <p class="text-center text_G">Sistema Operacional</p>
+                        <canvas id="sistemasO" width="200" height="200">Sistema Operacional</canvas>
+                    </div>
+                    <div class="col-4">
+                        <!-- grafico de dispositivos -->
+                    <p class="text-center text_G">Dispositivos</p>
+                        <canvas id="dispositivosG" width="400" height="400"></canvas>
+                    </div>
+                    <div class="col-4">
+                        <table class="table table-striped table-dark" id="dispCard"></table>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+                <div class="tabs">
+                    <hr>                    
+                    <div class="row">
+                        <div class="col-3">
+                            <!-- tabela de intrusus -->
+                                <table class="table table-striped table-dark" id="tabelaIntruso"></table>
+                        </div>
+                        <div class="col-9">
+                            <!-- tabela com informação dos validos -->
+                                <table class="table table-striped table-dark" id="tabelaInfo"></table>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</body>
+
+</html>
