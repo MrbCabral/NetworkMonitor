@@ -19,13 +19,15 @@ Antes de realizar a instalação da aplicação é necessário tais programas pa
 - Apache 2
 - PHP 7.1
 - MariaDB 10
-- JVM 8
+- JRE 8
+
+Basta executar o [Vagrantfile](https://github.com/BelarminoM/NetworkMonitor/blob/master/Vagrantfile) que os serão instalados.
 
 #### Servidor
-servidor.jar
+[Network Monitor](https://github.com/BelarminoM/NetworkMonitor)
 
 #### Cliente
-cliente.jar
+[Network Monitor Client](https://github.com/BelarminoM/NetworkMonitor-Client)
 
 ## Serviços
 
