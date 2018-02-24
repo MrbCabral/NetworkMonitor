@@ -1,7 +1,6 @@
-const SITE = 'http://localhost/json/log.json'
 
 function carregarIp(){
-    fetch(SITE)
+    fetch(LOG_JSON)
         .then(function (res) { return res.json() })
         .then(function (pcs) {
             const ips = document.querySelector('#divDesligar')
@@ -12,7 +11,6 @@ function carregarIp(){
             for (pc of pcs) {
                 if (pc.set == '1') {
                     formName += ` <option>PC:${pc.nome}</option>`
-                    console.log(pc.ip)
                 }
             }
             formName += `</select>
@@ -25,15 +23,14 @@ function carregarIp(){
 
 function desligarIp(){
     const ipDisp = document.querySelector('#ipDesligar').value
-    fetch(SITE)
+    fetch(LOG_JSON)
         .then(function (res) { return res.json() })
         .then(function (pcs) {
             var pcsplit = ipDisp.split(':')
             var pcIp = pcsplit[1]
             for (pc of pcs) {
                 if ((pc.set=='1') && (pc.nome==pcIp)){
-                    console.log(pc.ip)
-                    // aqui ficara o codigo para alertar o dispositivo por IP
+                    fetch(`${SHUTDOWN}${pc.ip}`)
                     let aviso = `<p class="titleAterar text - center">O Dispositivo ${pc.nome} foi Desligado</p>`
                     ok(aviso)
                     break
@@ -43,11 +40,11 @@ function desligarIp(){
 }
 
 function desligarTodos(){
-    fetch(SITE)
+    fetch(LOG_JSON)
         .then(function (res) { return res.json() })
         .then(function (pcs) {
             for (pc of pcs){
-                // aqui ficara o codigo para desligar todos
+                fetch(`${SHUTDOWN}${pc.ip}`)
             }
             let aviso =`<p class="titleAterar text - center">Todos os Dispositivos foram Desligados</p>`
             ok(aviso)

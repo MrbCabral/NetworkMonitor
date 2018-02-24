@@ -1,5 +1,3 @@
-'use strict;'
-const SITE = 'http://localhost/json/log.json'
 
 window.chartColors = {
     windows: 'rgb(0, 38, 255)',
@@ -19,7 +17,7 @@ get()
 
 
 function get(){
-    fetch(SITE)
+    fetch(LOG_JSON)
         .then(function (res) { return res.json() })
         .then(function (logs) {
             load(logs)
@@ -156,4 +154,18 @@ function load(logs){
             },
         }
     });
+}
+
+
+function reload() {
+    fetch(LOAD_LOG_JSON, { mode: "cors" })
+        .then(function (res) { return res.json() })
+        .then(function (logs) {
+            console.log(logs)
+            window.location.href = './index.php'
+        })
+    const telareload = document.querySelector('#telaTable')
+    let conten = ` <img src="../imagens/loading.m.gif" class="img-fluid text-center" style="margin-left:30%; magin-top:140px;" alt="Responsive image">`
+    telareload.innerHTML = conten
+
 }

@@ -1,130 +1,66 @@
 [
-	{
-		"ip" : "10.0.2.127",
-		"mac" : "10-1F-74-40-9A-81",
-		"nome" : "lab3-08",
-		"usuario" : "2016138000",
-		"so" : "Linux",
-		"version" : "4.4.0-92-generic",
-		"set":"1"
-	},
-	{
-		"ip" : "10.0.2.128",
-		"mac" : "10-1F-74-40-9A-AA",
-		"nome" : "lab3-09",
-		"usuario" : "2016138000",
-		"so" : "Linux",
-		"version" : "4.4.0-92-generic",
-		"set":"1"	},
-	{
-		"ip" : "10.0.2.130",
-		"mac" : "10-1F-74-40-9A-A3",
-		"nome" : "lab3-12",
-		"usuario" : "2016138000",
-		"so" : "Windows",
-		"version" : "10",
-		"set":"1"
-	},
-	{
-		"ip" : "10.0.2.131",
-		"mac" : "10-1F-74-40-9F-10",
-		"nome" : "lab3-13",
-		"usuario" : "2016138000",
-		"so" : "Windows",
-		"version" : "7",
-		"set":"1"
-	},
-	{
-		"ip": "10.0.2.150",
-		"mac": "10-1F-74-49-9A-81",
-		"nome": "lab3-20",
-		"usuario": "2016138000",
-		"so": "Windows",
-		"version": "8.1",
-		"set":"1"
-	},
-	{
-		"ip": "10.0.2.150",
-		"mac": "10-1F-74-49-9A-81",
-		"nome": "lab3-20",
-		"usuario": "2016138000",
-		"so": "Windows",
-		"version": "8.1",
-		"set":"1"	},
-	{
-		"ip": "10.0.2.150",
-		"mac": "10-1F-74-49-9A-81",
-		"nome": "lab3-20",
-		"usuario": "2016138000",
-		"so": "Windows",
-		"version": "8.1",
-		"set":"1"
-	},
-	{
-		"ip": "10.0.2.150",
-		"mac": "10-1F-74-49-9A-81",
-		"nome": "lab3-20",
-		"usuario": "2016138000",
-		"so": "Windows",
-		"version": "8.1",
-			"set":"1"
-	},
-	{
-		"ip": "10.0.2.150",
-		"mac": "10-1F-74-49-9A-81",
-		"nome": "lab3-20",
-		"usuario": "2016138000",
-		"so": "Windows",
-		"version": "8.1",
-			"set":"1"
-	},
-	{
-		"ip": "10.0.2.150",
-		"mac": "10-1F-74-49-9A-81",
-		"nome": "lab3-20",
-		"usuario": "2016138000",
-		"so": "Windows",
-		"version": "8.1",
-		"set":"1"
-	}
-	,
-	{
-		"ip": "10.0.2.150",
-		"mac": "",
-		"nome": "",
-		"usuario": "",
-		"so": "",
-		"version": "",
-		"set": "2"
-	}
-	,
-	{
-		"ip": "10.0.2.151",
-		"mac": "",
-		"nome": "",
-		"usuario": "",
-		"so": "",
-		"version": "",
-		"set": "2"
-	}
-	,
-	{
-		"ip": "10.0.2.152",
-		"mac": "",
-		"nome": "",
-		"usuario": "",
-		"so": "",
-		"version": "",
-		"set": "2"
-	}
-	,
-	{
-		"ip": "10.0.2.153",
-		"mac": "",
-		"nome": "",
-		"usuario": "",
-		"so": "",
-		"version": "",
-		"set": "2"
-	}
+    {
+        "ip": "10.0.4.235",
+        "mac": "08-00-2A-66-99-FE",
+        "nome": "pcdesk",
+        "usuario": "-",
+        "so": "Windows 10",
+        "version": "10.0",
+        "set": "1"
+    },
+    {
+        "ip": "10.0.4.236",
+        "mac": "-",
+        "nome": "-",
+        "usuario": "-",
+        "so": "-",
+        "version": "-",
+        "set": "2"
+    },
+    {
+        "ip": "10.0.4.77",
+        "mac": "08-00-27-A4-D7-79",
+        "nome": "Debian8",
+        "usuario": "-",
+        "so": "Linux",
+        "version": "3.16.0-4-amd64",
+        "set": "1"
+    },
+    {
+        "ip": "10.0.4.240",
+        "mac": "-",
+        "nome": "-",
+        "usuario": "-",
+        "so": "-",
+        "version": "-",
+        "set": "2"
+    },
+    {
+        "ip": "10.0.4.241",
+        "mac": "-",
+        "nome": "-",
+        "usuario": "-",
+        "so": "-",
+        "version": "-",
+        "set": "2"
+    },
+    {
+        "ip": "10.0.4.59",
+        "mac": "00-F9-D6-7C-33-A0",
+        "nome": "DESKTOP-6L42IM6",
+        "usuario": "-",
+        "so": "Windows 10",
+        "version": "10.0",
+        "set": "1"
+    },
+    {
+        "ip": "10.0.4.49",
+        "mac": "08-00-27-B8-61-6A",
+        "nome": "LabRedes-PC",
+        "usuario": "-",
+        "so": "Windows 7",
+        "version": "6.1",
+        "set": "1"
+    }
 ]
+    

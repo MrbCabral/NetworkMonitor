@@ -1,23 +1,28 @@
 
-const SITE = 'http://localhost/json/admin.json'
 
+function sleep(milisegundos){
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) if ( (new Date().getTime - start) > milisegundos) break;
+}
 
 function carregarUser() {
     const listaUsers = document.querySelector('#alterarUser')
-    fetch(SITE)
-        .then(function (res) { return res.json() })
-        .then(function (users) {
-            let names = `<div class="form-group">
-                            <label for="selectIp" style="margin-top: 20px;">Administradores Cadastrados</label>
-                            <select class="form-control" id="usersCadastrados">`
+    fetch(ADMIN_PHP).then(1500).then(
+        fetch(ADMIN_JSON)
+            .then(function (res) { return res.json() })
+            .then(function (users) {
+                let names = `<div class="form-group">
+                                <label for="selectIp" style="margin-top: 20px;">Administradores Cadastrados</label>
+                                <select class="form-control" id="usersCadastrados">`
 
-            for (user of users) {
-                names += `<option>Login: ${user.login}, Matricula: ${user.matricula}</option>`
-            }
-            names +=`</select>
-                    </div>`
-            listaUsers.innerHTML = names
-        })
+                for (user of users) {
+                    names += `<option>Login: ${user.login}, Matricula: ${user.matricula}</option>`
+                }
+                names +=`</select>
+                        </div>`
+                listaUsers.innerHTML = names
+            })
+    )
 
 }
 
@@ -30,10 +35,10 @@ function alterar(controle){
         // e sera apenas editado
         exibir+=`
             <p class="titleAterar text-center">Editar Administrador</p>
-            <form>
+            <form  method="POST" action="alt_user.php">
                  <div class="form-group">
-                   <label>Login</label>
-                   <input type="text" class="form-control" id="login"  placeholder="login">
+                   <label>Matricula</label>
+                   <input type="text" class="form-control" id="matricula"  placeholder="matricula">
                  </div>
                  <div class="form-group">
                    <label>Senha</label>
@@ -46,16 +51,16 @@ function alterar(controle){
         // Formulario para remover administrador, este form ira chamar a função remover() 
         exibir += `
             <p class="titleAterar text-center">Remover Administrador</p>
-            <form>
+            <form method="POST" action="/php/del_user.php">
                  <div class="form-group">
-                   <label>Login  ou Matricula</label>
-                   <input type="text" class="form-control" id="loginRemover" placeholder="login  ou Matricula">
+                   <label>Matricula</label>
+                   <input type="text" class="form-control" id="loginRemover" placeholder="Matricula" name="matricula">
                  </div>
                  <div class="form-group">
                    <label>Senha</label>
-                   <input type="password" class="form-control" id="senhaRemover" placeholder="senha">
+                   <input type="password" class="form-control" id="senhaRemover" placeholder="senha" name="senha">
                  </div>
-                 <button type="button" class="btn btn-primary" onclick="remover()">Remover</button>
+                 <button type="submit" class="btn btn-primary">Remover</button>
              </form>
              <div id="painelValidar"></div>`
     } else {
@@ -64,19 +69,16 @@ function alterar(controle){
             <p class="titleAterar text-center">Alterar Senha</p>
             <form>
                  <div class="form-group">
-                   <label>Login  ou Matricula</label>
-                   <input type="text" class="form-control" id="loginRemover" placeholder="login  ou Matricula">
+                   <label>Matricula</label>
+                   <input type="text" class="form-control" id="loginRemover" placeholder="Matricula">
                  </div>
-                 <div class="form-group">
+                 <div class="form-group" method="POST" action="alt_pass.php">
                    <label>Senha Atual</label>
                    <input type="password" class="form-control" id="senhaRemover" placeholder="senha Atual">
                  </div>
                  <button type="button" class="btn btn-primary" onclick="validar(0)">Remover</button>
              </form>
              <div id="painelValidar"></div>`
-        
-
-
     }
     userAlterar.innerHTML = exibir
 }
@@ -86,13 +88,13 @@ function addEdit(indicador){
         // Função para addEdit ou adicionar administradores, caso ela receba o valor "0" significa que o admin já esta cadastrado 
         // e que esta função foi chamada para editar um Admin, caso receba o valor "1" esta função foi chamada para adicionar um novo admin
     const val = document.querySelector('#alterarUser')
-    fetch(SITE)
+    fetch(ADMIN_JSON)
         .then(function (res) { return res.json() })
         .then(function (users) {
             let lix=``
             if (indicador==0){
                 var passValidar = document.querySelector('#senha').value
-                var userValidar = document.querySelector('#login').value
+                var userValidar = document.querySelector('#matricula').value
                 for (user of users){
                     if ((passValidar == user.senha) && (userValidar == user.login)){
                         lix += `<form>
@@ -122,20 +124,20 @@ function addEdit(indicador){
             else if (indicador==1){
                 lix += `
                         <p class="titleAterar text-center">Adicionar Administrador</p>
-                        <form>
+                         <form method="POST" action="/php/add_user.php">
                             <div class="form-group">
                                 <label>Novo Login</label>
-                              <input type="text" class="form-control" id="nwlogin" aria-describedby="emailHelp" placeholder="login">
+                              <input type="text" class="form-control" id="nwlogin" aria-describedby="emailHelp" placeholder="login" name="login">
                             </div>
                             <div class="form-group">
                                 <label>Nova Matricula</label>
-                                <input type="number" class="form-control" id="nwmatricula" aria-describedby="emailHelp" placeholder="login">
+                                <input type="number" class="form-control" id="nwmatricula" aria-describedby="emailHelp" placeholder="login" name="matricula">
                             </div>
                             <div class="form-group">
                                 <label>Nova Senha</label>
-                               <input type="password" class="form-control" id="nwsenha" placeholder="senha">
+                               <input type="password" class="form-control" id="nwsenha" placeholder="senha" name="senha">
                             </div>
-                            <button type="button" class="btn btn-primary" onclick="gravar()">Salvar</button>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
                         </form>`
 
             }
@@ -148,7 +150,7 @@ function remover(){
     var passRemover = document.querySelector('#senhaRemover').value
     var userRemover = document.querySelector('#loginRemover').value
     let cont=0
-    fetch(SITE)
+    fetch(ADMIN_JSON)
         .then(function (res) { return res.json() })
         .then(function (users) {
             for (user of users){
@@ -187,7 +189,7 @@ function validar(vControle){
     if (vControle==0){
         var passRemover = document.querySelector('#senhaRemover').value
         var userRemover = document.querySelector('#loginRemover').value
-        fetch(SITE)
+        fetch(ADMIN_JSON)
             .then(function (res) { return res.json() })
             .then(function (users) {
                 for (user of users) {

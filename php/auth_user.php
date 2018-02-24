@@ -1,13 +1,13 @@
 <?php
   session_start();
 
-  $login = $_POST['usuario'] ?? null;
+  $login = $_POST['matricula'] ?? null;
   $senha = md5($_POST['senha']) ?? null;
   
   try {
         $conn = new PDO('mysql:host=localhost;dbname=db_aprendiz', 'root', '');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM usuarios WHERE (login = :login && senha = :senha) || (matricula = :login && senha = :senha)";
+        $sql = "SELECT * FROM usuarios WHERE matricula = :login && senha = :senha";
         // prepara a execucao do comando sql
         $stmt = $conn->prepare( $sql );
         // protege os parametros inseridos no comando

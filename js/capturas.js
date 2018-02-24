@@ -1,9 +1,8 @@
-const SITE = 'http://localhost/json/log.json'
 const IMAGENS = '/img/'
 
 function carregarIp() {
     const names = document.querySelector('#printsImagens')
-    fetch(SITE)
+    fetch(LOG_JSON)
         .then(function (res) { return res.json() })
         .then(function (pcs) {
             let formName =`<div class="form-group">
@@ -23,28 +22,39 @@ function carregarIp() {
         })
 }
 
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; true; i++) {
+        if ((new Date().getTime() - start) > milliseconds) {
+            break;
+        }
+    }
+}
+
 function prints(controle){
     const painelImagem = document.querySelector("#printsImagens")
+    var int = 0
     let imgPrints=`` 
     if (controle==1){
         const ipDisp = document.querySelector('#ipCapturar').value
-        fetch(SITE)
+        fetch(LOG_JSON)
             .then(function (res) { return res.json() })
             .then(function (pcs) {
                 var pcsplit = ipDisp.split(':')
                 var pcIp = pcsplit[1]
                 for (pc of pcs) {
                     if ((pc.set == '1') && (pc.nome == pcIp)) {
-                        console.log(pcIp)
-                        imgPrints += ` <h4>${pc.nome}</h4>
-                                       <img src="${IMAGENS}${pc.ip}.png" class="img-fluid" alt="Responsive image">`
-                        painelImagem.innerHTML=imgPrints
-                        break
+                        fetch(`${SCREEN}${pc.ip}`)    
+                        imgPrints += ` <h4 style="margin-top:30px;">${pc.nome}</h4>
+                        <img src="../api/${pc.ip}.png" class="img-fluid" alt="Responsive image">`
+                        sleep(3000)
+                        painelImagem.innerHTML = imgPrints
+                        break    
                     }
                 }
             })
     } else if (controle==2){
-        fetch(SITE)
+        fetch(LOG_JSON)
         .then(function (res) { return res.json() })
         .then(function (pcs) {
             let i=0
@@ -52,20 +62,21 @@ function prints(controle){
                             <div class="carousel-inner">`
 
             for (pc of pcs) {
+                fetch(`${SCREEN}${pc.ip}`)
                 if ((pc.set=='1')&&(i==0)) {
                     imgPrints += `  
                     <div class="carousel-item active">
                         <h4>${pc.nome}</h4>
-                        <img class="d-block w-100" src="${IMAGENS}${pc.ip}.png">
+                        <img class="d-block w-100" src="../api/${pc.ip}.png">
                     </div>`
-                } else {
+                    i++
+                } else if (pc.set == '1'){
                     imgPrints += `  
                     <div class="carousel-item">
                         <h4>${pc.nome}</h4>
-                        <img class="d-block w-100" src="${IMAGENS}${pc.ip}.png">
+                        <img class="d-block w-100" src="../api/${pc.ip}.png">
                     </div>`
                 }
-                i++
             } 
             imgPrints +=`</div>
                           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -77,8 +88,8 @@ function prints(controle){
                             <span class="sr-only">Next</span>
                           </a>
                         </div>`
+            sleep(3000)
             painelImagem.innerHTML = imgPrints
-            console.log(10)     
         })
     }
 }

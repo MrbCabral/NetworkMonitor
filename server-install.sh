@@ -32,6 +32,8 @@ DBPASSWD=abc123
 echo "mysql-server mysql-server/root_password password $DBPASSWD" | sudo debconf-set-selections  > /dev/null
 echo "mysql-server mysql-server/root_password_again password $DBPASSWD" | sudo debconf-set-selections  > /dev/null
 sudo apt-get -y install mysql-server  > /dev/null
+mysql -h localhost -u root -p $DBPASSWD db_aprendiz db_aprendiz.sql
+
 
 
 echo "Installing JRE"
