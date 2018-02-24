@@ -6,11 +6,11 @@ O Network Monitor é uma aplicação que monitora dispositivos conectados à red
 
 ![Cenário da aplicação](imagens/cenario.png)
 - [Instalação](#instalação)
-- [Telas do Servidor e Cliente](#telas)
-- [API DOC](#api-doc)
-  - [Informação](#informacao)
-  - [Alertar](#alertar)
-  - [Capturar Tela](#capturar)
+- [Telas do Servidor e Cliente](#Capturas_de_Telas_do_Servidor_e_Cliente)
+- [API DOC](#serviços)
+  - [Informação](#obter_informação)
+  - [Alertar](#geracao_do_alertar)
+  - [Capturar Tela](#capturar_tela)
   - [Desligar](#desligar)
 
 ## Instalação
@@ -32,17 +32,17 @@ Basta executar o [Vagrantfile](https://github.com/BelarminoM/NetworkMonitor/blob
 
 #### Capturas de Telas do Servidor e Cliente
 
-![screen1](exemplosTelas/LOGIN.png)
-![screen2](exemplosTelas/painel.png)
-![screen3](exemplosTelas/dispositivos.png)
-![screen4](exemplosTelas/modal.png)
-![screen5](exemplosTelas/alert.png)
-![screen6](exemplosTelas/desligar.png)
-![screen7](exemplosTelas/add-adm.png)
-![screen8](exemplosTelas/Capturar-1.png)
-![screen9](exemplosTelas/Capturar-todos.png)
-![screen10](exemplosTelas/DESLIGADO.png)
-![screen11](exemplosTelas/LERTADO.png)
+![screen1](exemplosTelas/LOGIN.PNG)
+![screen2](exemplosTelas/painel.PNG)
+![screen3](exemplosTelas/dispositivos.PNG)
+![screen4](exemplosTelas/modal.PNG)
+![screen5](exemplosTelas/alert.PNG)
+![screen6](exemplosTelas/desligar.PNG)
+![screen7](exemplosTelas/add-adm.PNG)
+![screen8](exemplosTelas/Capturar-1.PNG)
+![screen9](exemplosTelas/Capturar-todos.PNG)
+![screen10](exemplosTelas/DESLIGADO.PNG)
+![screen11](exemplosTelas/ALERTADO.PNG)
 
 
 #### Servidor
